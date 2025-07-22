@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: background-image 1s ease;
+  overflow-y: auto;
+  min-height: 100vh;
+}
+
+
+.container {
+  text-align: center;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.100);  /* tidak terlalu transparan */
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  color: #e91e63;
+}
+
+.question {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+input {
+  padding: 10px;
+  border: 2px solid pink;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: hotpink;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: deeppink;
+}
+
+.hidden {
+  display: none;
+}
+
+.surprise {
+  font-size: 2rem;
+  color: #e91e63;
+  animation: pop 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes pop {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+.foto-cinta {
+  width: 80%;
+  max-width: 250px;
+  height: auto;
+  margin: 0 auto 20px auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+
+/* Background untuk tiap halaman */
+.bg1 {
+  background-image: url('bg1.jpg');
+}
+
+.bg2 {
+  background-image: url('bg2.jpg');
+}
+
+.bg3 {
+  background-image: url('bg3.jpg');
+}
+
+@keyframes zoomBackground {
+  0% { background-size: 100%; }
+  50% { background-size: 105%; }
+  100% { background-size: 100%; }
+}
+
+.bg2, .bg3 {
+  animation: zoomBackground 10s ease-in-out infinite;
+}
+
+/* Animasi masuk untuk gambar */
+@keyframes fotoMasuk {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.foto-cinta.animate {
+  animation: fotoMasuk 1.5s ease-out forwards;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .question, p {
+    font-size: 1rem;
+  }
+
+  .foto-cinta {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .foto-cinta {
+    width: 90%;
+    max-width: 200px;
+  }
+
+  h1, p {
+    font-size: 1rem;
+  }
+
+  .container {
+    padding: 15px;
+  }
+}
+
+
+
